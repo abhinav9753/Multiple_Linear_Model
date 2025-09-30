@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profit Prediction</title>
+    <!-- Use Tailwind CSS for modern styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+        }
+        .bg-gradient-custom {
+            background: linear-gradient(135deg, #FF6347 0%, #FF8C00 100%); /* Orange and Red Gradient */
+        }
+    </style>
+</head>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen p-4">
+
+    <!-- Main Container with Gradient Background -->
+    <div class="bg-gradient-custom w-full max-w-4xl mx-auto rounded-3xl shadow-2xl p-6 md:p-12 text-white">
+        <!-- Main Content Area -->
+        <div class="bg-white bg-opacity-10 backdrop-filter backdrop-blur-lg rounded-2xl p-8 shadow-inner">
+            <h1 class="text-3xl md:text-5xl font-bold text-center mb-2">Profit Predictor</h1>
+            <p class="text-md md:text-lg text-center font-medium mb-8 opacity-90">Enter the details to predict your company's profit.</p>
+
+            <!-- Prediction Form -->
+            <form action="/predict" method="post" class="space-y-6">
+                <!-- R&D Spend Input -->
+                <div>
+                    <label for="rnd_spend" class="block text-sm font-semibold mb-2">R&D Spend</label>
+                    <input type="number" step="any" id="rnd_spend" name="rnd_spend" placeholder="e.g., 100000" required
+                           class="w-full p-3 rounded-xl bg-white bg-opacity-20 border border-white border-opacity-30 text-white placeholder-gray-200 focus:outline-none focus:ring-2 focus:ring-white transition-colors duration-200">
+                </div>
+
+                <!-- Administration Input -->
+                <div>
+                    <label for="admin_spend" class="block text-sm font-semibold mb-2">Administration Spend</label>
+                    <input type="number" step="any" id="admin_spend" name="admin_spend" placeholder="e.g., 120000" required
+                           class="w-full p-3 rounded-xl bg-white bg-opacity-20 border border-white border-opacity-30 text-white placeholder-gray-200 focus:outline-none focus:ring-2 focus:ring-white transition-colors duration-200">
+                </div>
+
+                <!-- Marketing Spend Input -->
+                <div>
+                    <label for="marketing_spend" class="block text-sm font-semibold mb-2">Marketing Spend</label>
+                    <input type="number" step="any" id="marketing_spend" name="marketing_spend" placeholder="e.g., 250000" required
+                           class="w-full p-3 rounded-xl bg-white bg-opacity-20 border border-white border-opacity-30 text-white placeholder-gray-200 focus:outline-none focus:ring-2 focus:ring-white transition-colors duration-200">
+                </div>
+
+                <!-- State Input (Dropdown) -->
+                <div>
+                    <label for="state" class="block text-sm font-semibold mb-2">State</label>
+                    <select id="state" name="state" required
+                            class="w-full p-3 rounded-xl bg-white bg-opacity-20 border border-white border-opacity-30 text-white focus:outline-none focus:ring-2 focus:ring-white transition-colors duration-200">
+                        <option value="0" class="text-gray-800 bg-gray-100">New York</option>
+                        <option value="1" class="text-gray-800 bg-gray-100">California</option>
+                        <option value="2" class="text-gray-800 bg-gray-100">Florida</option>
+                    </select>
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit"
+                        class="w-full mt-8 p-3 bg-white text-orange-500 font-bold rounded-xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300">
+                    Predict Profit
+                </button>
+            </form>
+
+            <!-- Project Credit -->
+            <div class="text-center mt-8 text-sm opacity-70">
+                Project by Abhinav Boyapally
+            </div>
+        </div>
+    </div>
+</body>
+</html>
